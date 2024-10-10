@@ -7,9 +7,11 @@ export default function App(){
       <header>
         <Navbar/>
       </header>
+
       <main>
         <Outlet/>
       </main>
+      
       <footer>
 
       </footer>
