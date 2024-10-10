@@ -1,5 +1,6 @@
-
+import BannerCategory from './BannerCategory';
 import BannerSearch from './BannerSearch';
+
 export default function Banner(){
     return(
         <>
@@ -8,8 +9,8 @@ export default function Banner(){
                     the whole world awaits
                 </h2>
             </div>
-
             <BannerSearch/>
+            <BannerCategory/>
         </>
     )
 }
