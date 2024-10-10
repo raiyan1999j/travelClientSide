@@ -6,7 +6,7 @@ import Paris from '../../../public/paris.png';
 export default function TopVacation(){
     return(
         <>
-            <section className=' translate-y-[-200px]'>
+            <section className=' mt-[-200px]'>
                 <div className="w-[441px] ml-[132.84px] mb-[35.42px]">
                     <h2 className='capitalize text-[35.425px] font-Helvetica font-bold leading-normal text-white'>
                         top vacation destination
