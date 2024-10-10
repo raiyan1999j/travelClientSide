@@ -1,4 +1,5 @@
 import Offers from "./Offers";
+import PropertyType from "./PropertyType";
 import TopVacation from "./TopVacation";
 
 export default function Home(){
@@ -6,6 +7,7 @@ export default function Home(){
         <>
             <TopVacation/>
             <Offers/>
+            <PropertyType/>
         </>
     )
 }
