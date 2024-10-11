@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Navbar from "./ClientSide/Navbar/Navbar";
 import { useEffect } from "react";
+import Footer from "./ClientSide/Footer/Footer";
 
 export default function App(){
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function App(){
       </main>
       
       <footer>
-
+        <Footer/>
       </footer>
     </>
   )
