@@ -13,7 +13,7 @@ export default function PropertyType(){
                     </h2>
                 </div>
 
-                <div className="w-[1372.72px] ml-[132.84px]">
+                <div className="w-[1372.72px] ml-[132.84px] overflow-hidden">
                     <div className="w-full grid grid-cols-[repeat(4,343.179px)] gap-x-[26.57px]">
                         <div className="relative h-[221.406px] w-full">
                             <div className="absolute h-full w-full top-0 left-0 before:content-'' before:h-full before:w-full before:absolute before:bg-blurImg">

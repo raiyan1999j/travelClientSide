@@ -1,3 +1,4 @@
+import AppAdvantage from "./AppAdvantage";
 import Article from "./Article";
 import Connect from "./Connect";
 import Offers from "./Offers";
@@ -12,6 +13,7 @@ export default function Home(){
             <PropertyType/>
             <Article/>
             <Connect/>
+            <AppAdvantage/>
         </>
     )
 }

@@ -6,14 +6,14 @@ import Paris from '../../../public/paris.png';
 export default function TopVacation(){
     return(
         <>
-            <section className=' mt-[-200px]'>
+            <section className='mt-[-200px]'>
                 <div className="w-[441px] ml-[132.84px] mb-[35.42px]">
                     <h2 className='capitalize text-[35.425px] font-Helvetica font-bold leading-normal text-white'>
                         top vacation destination
                     </h2>
                 </div>
-                <div className="w-[1372.72px] ml-[139.49px] overflow-hidden">
-                    <div className="w-full grid grid-cols-[repeat(4,343.179px)] gap-x-[26.57px]">
+                <div className="max-w-[1372.72px] ml-[139.49px] overflow-hidden">
+                    <div className="w-full grid grid-cols-[repeat(4,343.179px)] gap-x-[26.57px] ">
                         <div className="h-[221.406px] w-full rounded-lg relative">
                             <div className="h-full w-full top-0 left-0 rounded-lg absolute before:absolute before:content-'' before:h-full before:w-full before:bg-blurImg">
                                 <img src={Indonesia} alt="indonesia" className="h-full w-full object-cover rounded-lg" />
