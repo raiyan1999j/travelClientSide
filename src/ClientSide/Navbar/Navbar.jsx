@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Banner from "./Banner";
 
 export default function Navbar(){
@@ -17,7 +18,11 @@ export default function Navbar(){
                                 <li>stays</li>
                                 <li>flight</li>
                                 <li>packages</li>
-                                <li>sign up</li>
+                                <li>
+                                <NavLink to="/signup">
+                                sign up
+                                </NavLink>
+                                </li>
                             </ul>
                         </div>
                     </nav>
