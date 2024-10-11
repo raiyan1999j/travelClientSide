@@ -5,9 +5,18 @@ import { useState } from "react";
 
 export default function Signup({changeCondition}){
     const [txtPass,setTxtPass] = useState(false);
+    const [fadeCondition,setFadeCondition] = useState(true);
+
+    const conditionChange=()=>{
+        setFadeCondition(!fadeCondition);
+
+        setTimeout(()=>{
+            changeCondition(false)
+        },250)
+    }
     return(
         <>
-            <section>
+            <section className={`transition-all duration-200 ${fadeCondition?"opacity-100 ease-in":"opacity-0 ease-out"}`}>
             <div>
               <div className="w-[313.967px] py-[100px]">
                 <div className="text-center">
@@ -95,7 +104,7 @@ export default function Signup({changeCondition}){
                 <div className="w-full text-center mt-[15.72px]">
                   <h5 className="text-[#595959] font-poppins text-[10px] font-medium leading-normal tracking-[0.3px]">
                     Already have an account?
-                    <span className="text-[#EA454C] hover:underline" onClick={()=>{changeCondition(false)}}>
+                    <span className="text-[#EA454C] hover:underline" onClick={()=>{conditionChange()}}>
                       Go to login!
                     </span>
                   </h5>
