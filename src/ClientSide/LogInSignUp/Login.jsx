@@ -1,11 +1,13 @@
 import GoogleImg from "../../../public/googleImg.png";
 import { VscEyeClosed } from "react-icons/vsc";
 import { RxEyeOpen } from "react-icons/rx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { InfoProvider } from "../../AuthProvider/AuthProvider";
 
 export default function Login({changeCondition}){
     const [txtPass,setTxtPass] = useState(false);
     const [fadeCondition,setFadeCondition] = useState(true);
+    const {googleLogin} = useContext(InfoProvider);
 
     const conditionChange=()=>{
         setFadeCondition(!fadeCondition);
@@ -73,7 +75,7 @@ export default function Login({changeCondition}){
                   <button className="h-[41.311px] w-[313.967px] rounded-xl border border-[#EA454C] transition-all duration-200 ease-in hover:bg-[#EA454C] hover:text-white text-sm font-medium leading-normal tracking-[0.42px] font-poppins text-[#636364]">
                     Log in
                   </button>
-                  <button className="flex flex-row justify-center items-center h-[41.311px] w-[313.967px] text-[#000000] font-poppins text-sm font-medium leading-normal tracking-[0.42px] border border-[#00000040] rounded-xl transition-all ease-in duration-100 hover:bg-[#EA454C] hover:border-[#EA454C]">
+                  <button className="flex flex-row justify-center items-center h-[41.311px] w-[313.967px] text-[#000000] font-poppins text-sm font-medium leading-normal tracking-[0.42px] border border-[#00000040] rounded-xl transition-all ease-in duration-100 hover:bg-[#EA454C] hover:border-[#EA454C]" onClick={()=>{googleLogin()}}>
                     <span className="h-[28.918px] w-[28.918px] mr-[6.2px] ">
                       <img
                         src={GoogleImg}

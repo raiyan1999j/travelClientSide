@@ -34,7 +34,7 @@ const validate=(value)=>{
 export default function Signup({changeCondition}){
     const [txtPass,setTxtPass] = useState(false);
     const [fadeCondition,setFadeCondition] = useState(true);
-    const {createAccount} = useContext(InfoProvider);
+    const {createAccount,googleLogin} = useContext(InfoProvider);
 
     const conditionChange=()=>{
         setFadeCondition(!fadeCondition);
@@ -54,7 +54,7 @@ export default function Signup({changeCondition}){
       onSubmit:value=>{
         createAccount(value)
       }
-    })
+    });
     return(
         <>
             <section className={`transition-all duration-200 ${fadeCondition?"opacity-100 ease-in":"opacity-0 ease-out"}`}>
@@ -148,7 +148,7 @@ export default function Signup({changeCondition}){
                   <button className="h-[41.311px] w-[313.967px] rounded-xl border border-[#EA454C] transition-all duration-200 ease-in hover:bg-[#EA454C] hover:text-white text-sm font-medium leading-normal tracking-[0.42px] font-poppins text-[#636364]" type="submit">
                     Create
                   </button>
-                  <button className="flex flex-row justify-center items-center h-[41.311px] w-[313.967px] text-[#000000] font-poppins text-sm font-medium leading-normal tracking-[0.42px] border border-[#00000040] rounded-xl transition-all ease-in duration-100 hover:bg-[#EA454C] hover:border-[#EA454C]">
+                  <button className="flex flex-row justify-center items-center h-[41.311px] w-[313.967px] text-[#000000] font-poppins text-sm font-medium leading-normal tracking-[0.42px] border border-[#00000040] rounded-xl transition-all ease-in duration-100 hover:bg-[#EA454C] hover:border-[#EA454C]" onClick={()=>{googleLogin()}}>
                     <span className="h-[28.918px] w-[28.918px] mr-[6.2px] ">
                       <img
                         src={GoogleImg}

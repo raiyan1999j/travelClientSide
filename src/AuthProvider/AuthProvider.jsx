@@ -9,7 +9,15 @@ export default function AuthProvider({children}){
         console.log(value)
     }
 
-    const info = {createAccount};
+    const googleLogin=()=>{
+        const provider = new GoogleAuthProvider();
+
+        signInWithPopup(auth,provider)
+        .then((credential)=>{
+            console.log(credential)
+        })
+    }
+    const info = {createAccount,googleLogin};
     return(
         <>
             <InfoProvider.Provider value={info}>
