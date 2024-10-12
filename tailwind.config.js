@@ -16,13 +16,7 @@ export default {
         "articleImg":"linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%), url('./public/articleBg.png')",
         "blurImg":"linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, rgba(0, 0, 0, 0.75) 100%)",
         "appAdvantageImg":"linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),url(./public/appAdvantage.png)"
-      },
-      animation:{
-        'spin-one':'spin 15s linear infinite',
-        'spin-two':'spin 5s linear infinite alternate-reverse',
-        'spin-three':'spin 15s linear infinite reverse',
-        'spin-four':'spin 5s linear infinite alternate-reverse',
-      },
+      }
     },
   },
   plugins: [],

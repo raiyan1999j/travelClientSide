@@ -3,11 +3,12 @@ import { VscEyeClosed } from "react-icons/vsc";
 import { RxEyeOpen } from "react-icons/rx";
 import { useContext, useState } from "react";
 import { InfoProvider } from "../../AuthProvider/AuthProvider";
+import { useFormik } from "formik";
 
 export default function Login({changeCondition}){
     const [txtPass,setTxtPass] = useState(false);
     const [fadeCondition,setFadeCondition] = useState(true);
-    const {googleLogin} = useContext(InfoProvider);
+    const {googleLogin,usualLogin,errorMessage} = useContext(InfoProvider);
 
     const conditionChange=()=>{
         setFadeCondition(!fadeCondition);
@@ -16,11 +17,22 @@ export default function Login({changeCondition}){
             changeCondition(true)
         },250)
     }
+
+    const formHandler = useFormik({
+      initialValues:{
+        email:"",
+        password:""
+      },
+      onSubmit:value=>{
+        usualLogin(value)
+      }
+    })
     return(
         <>
             <section className={`transition-all duration-200 ${fadeCondition?"opacity-100 ease-in":"opacity-0 ease-out"}`}>
             <div>
               <div className="w-[313.967px] py-[100px]">
+              <form onSubmit={formHandler.handleSubmit}>
                 <div>
                   <h2 className="text-[#030303] font-poppins text-[34px] font-medium leading-normal tracking-[1.02px] uppercase">
                     welcome back
@@ -44,6 +56,7 @@ export default function Login({changeCondition}){
                         id="email"
                         className="h-full w-full border border-[#00000040] rounded-xl text-[#636364] font-poppins text-sm font-light leading-normal tracking-[0.42px] pl-4 placeholder:text-[#636364]"
                         placeholder="Enter your email"
+                        {...formHandler.getFieldProps("email")}
                       />
                     </div>
                   </div>
@@ -66,13 +79,17 @@ export default function Login({changeCondition}){
                         type={txtPass?"text":"password"}
                         className="h-full w-full border border-[#00000040] rounded-xl text-[#636364] font-poppins text-sm font-light leading-normal tracking-[0.42px] pl-4 placeholder:text-[#636364]"
                         placeholder="Enter your password"
+                        {...formHandler.getFieldProps("password")}
                       />
                     </div>
                   </div>
+                  {
+                    errorMessage? <p className="text-rose-500 font-poppins text-sm font-light leading-normal">{errorMessage}</p>:null
+                  }
                 </div>
 
                 <div className="flex flex-col gap-y-[11.36px] mt-[51.64px]">
-                  <button className="h-[41.311px] w-[313.967px] rounded-xl border border-[#EA454C] transition-all duration-200 ease-in hover:bg-[#EA454C] hover:text-white text-sm font-medium leading-normal tracking-[0.42px] font-poppins text-[#636364]">
+                  <button className="h-[41.311px] w-[313.967px] rounded-xl border border-[#EA454C] transition-all duration-200 ease-in hover:bg-[#EA454C] hover:text-white text-sm font-medium leading-normal tracking-[0.42px] font-poppins text-[#636364]" type="submit">
                     Log in
                   </button>
                   <button className="flex flex-row justify-center items-center h-[41.311px] w-[313.967px] text-[#000000] font-poppins text-sm font-medium leading-normal tracking-[0.42px] border border-[#00000040] rounded-xl transition-all ease-in duration-100 hover:bg-[#EA454C] hover:border-[#EA454C]" onClick={()=>{googleLogin()}}>
@@ -86,6 +103,8 @@ export default function Login({changeCondition}){
                     Log in with Google
                   </button>
                 </div>
+
+                </form>
 
                 <div className="w-full text-center mt-[15.72px]">
                   <h5 className="text-[#595959] font-poppins text-[10px] font-medium leading-normal tracking-[0.3px]">
