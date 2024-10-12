@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Banner from "./Banner";
 import { useContext, useState } from "react";
 import { InfoProvider } from "../../AuthProvider/AuthProvider";
@@ -9,6 +9,7 @@ import Dots from "../../Loader/Dots";
 
 export default function Navbar() {
   const { loading, userInfo,logOutUser } = useContext(InfoProvider);
+  const navigate = useNavigate();
   const {isPending,isError,data} = useQuery({
     queryKey:["userAuth",userInfo],
     queryFn:()=>{
@@ -59,7 +60,7 @@ export default function Navbar() {
                       <div className="absolute w-[100px] hidden group-hover:block">
                         {
                           data=="user"?null:
-                          <button className="py-3 px-2 shadow-inner shadow-gray-900 rounded-xl hover:bg-gray-900 hover:scale-110 capitalize">
+                          <button className="py-3 px-2 shadow-inner shadow-gray-900 rounded-xl hover:bg-gray-900 hover:scale-110 capitalize" onClick={()=>{navigate("/dashboard")}}>
                             Dashboard
                           </button>
                         }
