@@ -1,6 +1,8 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react"
 import auth from "../Firebase/Firebase";
+import { useMutation } from "@tanstack/react-query";
+import { publicRoute } from "../PublicRoute/PublicRoute";
 
 export const InfoProvider = createContext(null);
 
@@ -8,6 +10,15 @@ export default function AuthProvider({children}){
     const [loading,setLoading] = useState(false);
     const [userInfo,setUserInfo]= useState(null);
     const [errorMessage,setError]= useState("");
+    const createUser = useMutation({
+        mutationFn:(value)=>{
+            const wrap = {
+                email: value,
+                author: "user"
+            }
+            return publicRoute.post('/createUser',wrap)
+        }
+    })
     
     const createAccount=(value)=>{
         setLoading(true);
@@ -18,6 +29,7 @@ export default function AuthProvider({children}){
             }).then(()=>{
                 setUserInfo(credential);
                 setLoading(false)
+                createUser.mutate(credential.user.email);
             }) 
         })
     }
@@ -45,17 +57,26 @@ export default function AuthProvider({children}){
         })
     }
 
+    const logOutUser=()=>{
+        setLoading(true)
+        signOut(auth)
+        .then(()=>{
+            setUserInfo(null)
+            setLoading(false)
+        })
+    }
     useEffect(()=>{
         setLoading(true);
         onAuthStateChanged(auth,(credential)=>{
             if(credential){
                 setUserInfo(credential)
                 setLoading(false)
-                console.log(credential)
+            }else{
+                setLoading(false)
             }
         })
     },[])
-    const info = {createAccount,googleLogin,usualLogin,userInfo,loading,errorMessage};
+    const info = {createAccount,googleLogin,usualLogin,logOutUser,userInfo,loading,errorMessage};
     return(
         <>
             <InfoProvider.Provider value={info}>

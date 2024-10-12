@@ -6,7 +6,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './ClientSide/Home/Home.jsx'
 import LogInSignUp from './ClientSide/LogInSignUp/LogInSignUP.jsx'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path:"/",
@@ -26,8 +28,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <QueryClientProvider client={queryClient}>
   <AuthProvider>
     <RouterProvider router={router}/>
   </AuthProvider>
+  </QueryClientProvider>
   </StrictMode>,
 )
