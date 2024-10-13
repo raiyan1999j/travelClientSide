@@ -18,12 +18,12 @@ export default function CreateService(){
                     </button>
                 </div>
                 <div>
-                    <button className="text-[#242424] bg-[#f0f0f0] py-3 px-4 font-semibold font-Helvetica text-xl rounded-xl shadow-[inset_0_0.0625em_0_0_#f4f4f4,_0_0.0625em_0_0_#efefef,_0_0.125em_0_0_#ececec,_0_0.25em_0_0_#e0e0e0,_0_0.3125em_0_0_#dedede,_0_0.375em_0_0_#dcdcdc,_0_0.425em_0_0_#cacaca,_0_0.425em_0.5em_0_#cecece] hover:translate-x-0 hover:translate-y-[3.6px] hover:shadow-[inset_0_0.03em_0_0_#f4f4f4,_0_0.03em_0_0_#efefef,_0_0.0625em_0_0_#ececec,_0_0.125em_0_0_#e0e0e0,_0_0.125em_0_0_#dedede,_0_0.2em_0_0_#dcdcdc,_0_0.225em_0_0_#cacaca,_0_0.225em_0.375em_0_#cecece] transition-all duration-150 ease-in">
+                    <button className="text-[#242424] bg-[#f0f0f0] py-3 px-4 font-semibold font-Helvetica text-xl rounded-xl shadow-[inset_0_0.0625em_0_0_#f4f4f4,_0_0.0625em_0_0_#efefef,_0_0.125em_0_0_#ececec,_0_0.25em_0_0_#e0e0e0,_0_0.3125em_0_0_#dedede,_0_0.375em_0_0_#dcdcdc,_0_0.425em_0_0_#cacaca,_0_0.425em_0.5em_0_#cecece] hover:translate-x-0 hover:translate-y-[3.6px] hover:shadow-[inset_0_0.03em_0_0_#f4f4f4,_0_0.03em_0_0_#efefef,_0_0.0625em_0_0_#ececec,_0_0.125em_0_0_#e0e0e0,_0_0.125em_0_0_#dedede,_0_0.2em_0_0_#dcdcdc,_0_0.225em_0_0_#cacaca,_0_0.225em_0.375em_0_#cecece] transition-all duration-150 ease-in" onClick={()=>{navigate('/dashboard/createOffers')}}>
                         Offers create
                     </button>
                 </div>
                 <div>
-                    <button className="text-[#242424] bg-[#f0f0f0] py-3 px-4 font-semibold font-Helvetica text-xl rounded-xl shadow-[inset_0_0.0625em_0_0_#f4f4f4,_0_0.0625em_0_0_#efefef,_0_0.125em_0_0_#ececec,_0_0.25em_0_0_#e0e0e0,_0_0.3125em_0_0_#dedede,_0_0.375em_0_0_#dcdcdc,_0_0.425em_0_0_#cacaca,_0_0.425em_0.5em_0_#cecece] hover:translate-x-0 hover:translate-y-[3.6px] hover:shadow-[inset_0_0.03em_0_0_#f4f4f4,_0_0.03em_0_0_#efefef,_0_0.0625em_0_0_#ececec,_0_0.125em_0_0_#e0e0e0,_0_0.125em_0_0_#dedede,_0_0.2em_0_0_#dcdcdc,_0_0.225em_0_0_#cacaca,_0_0.225em_0.375em_0_#cecece] transition-all duration-150 ease-in">
+                    <button className="text-[#242424] bg-[#f0f0f0] py-3 px-4 font-semibold font-Helvetica text-xl rounded-xl shadow-[inset_0_0.0625em_0_0_#f4f4f4,_0_0.0625em_0_0_#efefef,_0_0.125em_0_0_#ececec,_0_0.25em_0_0_#e0e0e0,_0_0.3125em_0_0_#dedede,_0_0.375em_0_0_#dcdcdc,_0_0.425em_0_0_#cacaca,_0_0.425em_0.5em_0_#cecece] hover:translate-x-0 hover:translate-y-[3.6px] hover:shadow-[inset_0_0.03em_0_0_#f4f4f4,_0_0.03em_0_0_#efefef,_0_0.0625em_0_0_#ececec,_0_0.125em_0_0_#e0e0e0,_0_0.125em_0_0_#dedede,_0_0.2em_0_0_#dcdcdc,_0_0.225em_0_0_#cacaca,_0_0.225em_0.375em_0_#cecece] transition-all duration-150 ease-in" onClick={()=>{navigate('/dashboard/createUsual')}}>
                         Usual service
                     </button>
                 </div>

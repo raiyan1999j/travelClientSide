@@ -1,7 +1,4 @@
 import { useState } from "react";
-import Event from "./Event";
-import Offers from "./Offers";
-import Usual from "./Usual";
 
 export default function LeftSide({ purpose }) {
   const [activation, setActivation] = useState(true);

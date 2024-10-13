@@ -10,6 +10,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Dashboard from './Dashboard/Dashboard.jsx'
 import CreateService from './Dashboard/CreateService/CreateService.jsx'
 import CreateEvent from './Dashboard/CreateEvent/CreateEvent.jsx'
+import CreateOffers from './Dashboard/CreateOffers/CreateOffers.jsx'
+import CreateUsual from './Dashboard/CreateUsual/CreateUsual.jsx'
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
       {
         path:"/dashboard/createEvent",
         element:<CreateEvent/>
+      },
+      {
+        path:"/dashboard/createOffers",
+        element:<CreateOffers/>
+      },
+      {
+        path:"/dashboard/createUsual",
+        element:<CreateUsual/>
       }
     ]
   }
