@@ -9,6 +9,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Dashboard from './Dashboard/Dashboard.jsx'
 import CreateService from './Dashboard/CreateService/CreateService.jsx'
+import CreateEvent from './Dashboard/CreateEvent/CreateEvent.jsx'
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:"/dashboard/createService",
         element:<CreateService/>
+      },
+      {
+        path:"/dashboard/createEvent",
+        element:<CreateEvent/>
       }
     ]
   }
