@@ -6,7 +6,7 @@ export default function Navbar(){
     const navigate = useNavigate();
     return(
         <>
-            <section className="w-[20%] h-screen top-0 left-0 border border-[#b2bec3] border-t-0 border-b-0 border-l-0 float-left before:content-'' before:table after:content-'' after:table after:clear-both">
+            <section className="w-[20%] h-screen fixed top-0 left-0 border border-[#b2bec3] border-t-0 border-b-0 border-l-0">
                 <nav className="w-full px-4 mx-auto">
                     <div className="pt-8" onClick={()=>{navigate("/home")}}>
                         <h1 className="text-gray-700 font-Helvetica font-bold text-[35px] leading-normal">

@@ -7,16 +7,15 @@ export default function TopBar(){
 
     useEffect(()=>{
         if(userInfo?.photoUrl == null){
-            const firstLatter = userInfo.displayName[0];
+            const firstLatter = userInfo?.displayName[0];
 
             setLatterContainer(firstLatter)
         }
-    },[])
+    },[userInfo])
 
-    console.log(userInfo);
     return(
         <>
-            <section className=" w-[80%] h-[100px] border border-[#b2bec3] border-t-0 border-r-0 border-l-0 float-left before:table before:content-'' after:table after:content-'' after:clear-both">
+            <section className=" w-[80%] h-[100px] border border-[#b2bec3] border-t-0 border-r-0 border-l-0 float-right">
                 <div className="w-full h-full flex flex-row items-center">
                     <div className="w-[80%] relative">
                         
