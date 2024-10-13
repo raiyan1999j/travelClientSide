@@ -1,18 +1,21 @@
 import { FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import TopBar from "./Topbar";
 
 export default function Navbar(){
+    const navigate = useNavigate();
     return(
         <>
-            <section className="w-[20%] h-screen top-0 left-0 border border-[#b2bec3] border-t-0 border-b-0 border-l-0">
+            <section className="w-[20%] h-screen top-0 left-0 border border-[#b2bec3] border-t-0 border-b-0 border-l-0 float-left before:content-'' before:table after:content-'' after:table after:clear-both">
                 <nav className="w-full px-4 mx-auto">
-                    <div className="pt-8">
+                    <div className="pt-8" onClick={()=>{navigate("/home")}}>
                         <h1 className="text-gray-700 font-Helvetica font-bold text-[35px] leading-normal">
                             trxvl.
                         </h1>
                     </div>
 
                     <div className="mt-10">
-                        <button className="flex flex-row items-center bg-sky-400 py-2 px-3 rounded-lg text-white font-medium font-netflix transition-all duration-150 ease-in hover:bg-transparent hover:shadow-inner hover:shadow-sky-300 hover:text-gray-900">
+                        <button className="flex flex-row items-center bg-sky-400 py-2 px-3 rounded-lg text-white font-medium font-netflix transition-all duration-150 ease-in hover:bg-transparent hover:shadow-inner hover:shadow-sky-300 hover:text-gray-900" onClick={()=>{navigate("/dashboard/createEvent")}}>
                         <FaPlus className="mr-1"/>
                             Create new service
                         </button>
@@ -36,6 +39,8 @@ export default function Navbar(){
                     </div>
                 </nav>
             </section>
+            
+            <TopBar/>
         </>
     )
 }
