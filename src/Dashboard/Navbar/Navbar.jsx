@@ -15,7 +15,7 @@ export default function Navbar(){
                     </div>
 
                     <div className="mt-10">
-                        <button className="flex flex-row items-center bg-sky-400 py-2 px-3 rounded-lg text-white font-medium font-netflix transition-all duration-150 ease-in hover:bg-transparent hover:shadow-inner hover:shadow-sky-300 hover:text-gray-900" onClick={()=>{navigate("/dashboard/createEvent")}}>
+                        <button className="flex flex-row items-center bg-sky-400 py-2 px-3 rounded-lg text-white font-medium font-netflix transition-all duration-150 ease-in hover:bg-transparent hover:shadow-inner hover:shadow-sky-300 hover:text-gray-900" onClick={()=>{navigate("/dashboard/createService")}}>
                         <FaPlus className="mr-1"/>
                             Create new service
                         </button>

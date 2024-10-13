@@ -8,7 +8,7 @@ import LogInSignUp from './ClientSide/LogInSignUp/LogInSignUP.jsx'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Dashboard from './Dashboard/Dashboard.jsx'
-import CreateEvent from './Dashboard/CreateEvent/CreateEvent.jsx'
+import CreateService from './Dashboard/CreateService/CreateService.jsx'
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
     element:<Dashboard/>,
     children:[
       {
-        path:"/dashboard/createEvent",
-        element:<CreateEvent/>
+        path:"/dashboard/createService",
+        element:<CreateService/>
       }
     ]
   }

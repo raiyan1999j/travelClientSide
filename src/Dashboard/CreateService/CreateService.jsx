@@ -1,7 +1,5 @@
-import LeftSide from "../ServiceForm/LeftSide";
-import RightSide from "../ServiceForm/RightSide";
 
-export default function CreateEvent(){
+export default function CreateService(){
     return(
         <>
         <section className="float-right w-[80%] h-[100px]">
