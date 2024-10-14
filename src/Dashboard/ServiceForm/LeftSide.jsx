@@ -1,7 +1,9 @@
+import { useFormikContext } from "formik";
 import { useState } from "react";
 
 export default function LeftSide({ purpose }) {
   const [activation, setActivation] = useState(true);
+  const {values,handleChange,errors,touched} = useFormikContext();
   return (
     <>
       <section>
@@ -23,6 +25,8 @@ export default function LeftSide({ purpose }) {
                       id="from"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                       placeholder="Current place"
+                      value={values.from}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -39,6 +43,8 @@ export default function LeftSide({ purpose }) {
                       id="to"
                       className="h-full w-full border border-gray-300 bg-transparent rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                       placeholder="Next destination"
+                      value={values.to}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -64,6 +70,8 @@ export default function LeftSide({ purpose }) {
                       type="text"
                       id="hotel"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                      value={values.hotel}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -79,6 +87,8 @@ export default function LeftSide({ purpose }) {
                       type="text"
                       id="person"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                      value={values.person}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -94,6 +104,103 @@ export default function LeftSide({ purpose }) {
                       type="text"
                       id="category"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                      value={values.category}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {purpose == "event" || purpose == "usual" ? (
+          <div className="mt-10">
+            <h2 className="text-2xl font-Helvetica font-bold capitalize text-gray-800 text-center mb-4">
+              Ticket information
+            </h2>
+            <div className="grid grid-cols-2 gap-x-3">
+              <div>
+                {purpose == "event" && purpose != "offers" ? (
+                  <label
+                    htmlFor="totalPrice"
+                    className="capitalize font-poppins text-slate-900 font-medium pl-2"
+                  >
+                    total price
+                    <div className="w-full h-10 mt-2">
+                      <input
+                        type="text"
+                        id="totalPrice"
+                        className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        placeholder="Total price"
+                        value={values.totalPrice}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </label>
+                ) : (
+                  <label
+                    htmlFor="price"
+                    className="capitalize font-poppins text-slate-900 font-medium pl-2"
+                  >
+                    price
+                    <div className="w-full h-10 mt-2">
+                      <input
+                        type="text"
+                        className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        placeholder="Per seat price"
+                      />
+                    </div>
+                  </label>
+                )}
+              </div>
+              <div className="grid grid-cols-2 gap-x-2">
+                <label
+                  htmlFor="coupon"
+                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
+                >
+                  <input
+                    type="checkbox"
+                    onClick={() => {
+                      setActivation(!activation);
+                    }}
+                    className="mr-2"
+                  />
+                  coupon
+                  <div className="w-full h-10 mt-2">
+                    <input
+                      type="text"
+                      placeholder="code"
+                      id="coupon"
+                      className={`w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans ${
+                        activation
+                          ? "opacity-50 bg-[#F8EFBA]/50"
+                          : "opacity-100"
+                      }`}
+                      disabled={activation}
+                      value={values.coupon}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </label>
+                <label
+                  htmlFor="discount"
+                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
+                >
+                  discount
+                  <div className="w-full h-10 mt-2">
+                    <input
+                      type="text"
+                      id="discount"
+                      className={`w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans ${
+                        activation
+                          ? "opacity-50 bg-[#F8EFBA]/50"
+                          : "opacity-100"
+                      }`}
+                      placeholder="0%"
+                      disabled={activation}
+                      value={values.discount}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -120,6 +227,8 @@ export default function LeftSide({ purpose }) {
                         type="text"
                         id="stayDay"
                         className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        value={values.stayDay}
+                        onChange={handleChange}
                       />
                     </div>
                   </label>
@@ -134,6 +243,8 @@ export default function LeftSide({ purpose }) {
                         type="text"
                         id="stayNight"
                         className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        value={values.stayNight}
+                      onChange={handleChange}
                       />
                     </div>
                   </label>
@@ -145,15 +256,17 @@ export default function LeftSide({ purpose }) {
                 </h2>
                 <div>
                   <label
-                    htmlFor="transportation"
+                    htmlFor="transport"
                     className="capitalize font-poppins text-slate-900 font-medium pl-2"
                   >
                     transport
                     <div className="w-[50%] h-10 mt-2">
                       <input
                         type="text"
-                        id="transportation"
+                        id="transport"
                         className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        value={values.transport}
+                      onChange={handleChange}
                       />
                     </div>
                   </label>
@@ -171,6 +284,9 @@ export default function LeftSide({ purpose }) {
             <textarea
               className="h-[250px] w-full bg-transparent rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
               placeholder="write your description"
+              id="description"
+              value={values.description}
+              onChange={handleChange}
             ></textarea>
           </div>
           {purpose == "offers" ? (
@@ -264,9 +380,11 @@ export default function LeftSide({ purpose }) {
                   Event Starting Date
                   <div className="w-[50%] h-10 mt-2">
                     <input
-                      type="text"
+                      type="date"
                       id="eventDate"
                       className="h-full w-full border border-gray-300 bg-transparent rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                      value={values.eventDate}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -306,93 +424,7 @@ export default function LeftSide({ purpose }) {
           </div>
         ) : null}
 
-        {purpose == "event" && purpose == "usual" ? (
-          <div className="mt-10">
-            <h2 className="text-2xl font-Helvetica font-bold capitalize text-gray-800 text-center mb-4">
-              Ticket information
-            </h2>
-            <div className="grid grid-cols-2 gap-x-3">
-              <div>
-                {purpose == "event" && purpose != "offers" ? (
-                  <label
-                    htmlFor="totalPrice"
-                    className="capitalize font-poppins text-slate-900 font-medium pl-2"
-                  >
-                    total price
-                    <div className="w-full h-10 mt-2">
-                      <input
-                        type="text"
-                        className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
-                        placeholder="Total price"
-                      />
-                    </div>
-                  </label>
-                ) : (
-                  <label
-                    htmlFor="price"
-                    className="capitalize font-poppins text-slate-900 font-medium pl-2"
-                  >
-                    price
-                    <div className="w-full h-10 mt-2">
-                      <input
-                        type="text"
-                        className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
-                        placeholder="Per seat price"
-                      />
-                    </div>
-                  </label>
-                )}
-              </div>
-              <div className="grid grid-cols-2 gap-x-2">
-                <label
-                  htmlFor="coupon"
-                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
-                >
-                  <input
-                    type="checkbox"
-                    onClick={() => {
-                      setActivation(!activation);
-                    }}
-                    className="mr-2"
-                  />
-                  coupon
-                  <div className="w-full h-10 mt-2">
-                    <input
-                      type="text"
-                      placeholder="code"
-                      id="coupon"
-                      className={`w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans ${
-                        activation
-                          ? "opacity-50 bg-[#F8EFBA]/50"
-                          : "opacity-100"
-                      }`}
-                      disabled={activation}
-                    />
-                  </div>
-                </label>
-                <label
-                  htmlFor="discount"
-                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
-                >
-                  discount
-                  <div className="w-full h-10 mt-2">
-                    <input
-                      type="text"
-                      id="discount"
-                      className={`w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans ${
-                        activation
-                          ? "opacity-50 bg-[#F8EFBA]/50"
-                          : "opacity-100"
-                      }`}
-                      placeholder="0%"
-                      disabled={activation}
-                    />
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        
 
         {purpose == "offers" ? (
           <div className="mt-10">
