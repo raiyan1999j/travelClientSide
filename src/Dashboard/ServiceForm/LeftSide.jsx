@@ -276,6 +276,50 @@ export default function LeftSide({ purpose }) {
           </div>
         ) : null}
 
+        {purpose == "offers" ? (
+          <div className="mt-10">
+            <h2 className="text-2xl font-Helvetica font-bold capitalize text-gray-800 text-center mb-4">
+              Offers Information
+            </h2>
+            <div className="grid grid-cols-2 gap-x-3">
+              <div>
+                <label
+                  htmlFor="title"
+                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
+                >
+                  title
+                  <div className="w-full h-10 mt-2">
+                    <input
+                      type="text"
+                      id="title"
+                      className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                      value={values.title}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </label>
+              </div>
+              <div>
+                <label
+                  htmlFor="place"
+                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
+                >
+                  place
+                  <div className="w-full h-10 mt-2">
+                    <input
+                      type="text"
+                      id="place"
+                      className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                      value={values.place}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
         <div className="mt-10">
           <h2 className="text-2xl font-Helvetica font-bold capitalize text-gray-800 text-center mb-4">
             description
@@ -301,6 +345,8 @@ export default function LeftSide({ purpose }) {
                     type="text"
                     id="addCoupon"
                     className="bg-transparent border border-gray-300 rounded-md text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans w-full"
+                    value={values.addCoupon}
+                    onChange={handleChange}
                   />
                 </div>
               </label>
@@ -426,44 +472,7 @@ export default function LeftSide({ purpose }) {
 
         
 
-        {purpose == "offers" ? (
-          <div className="mt-10">
-            <h2 className="text-2xl font-Helvetica font-bold capitalize text-gray-800 text-center mb-4">
-              Offers Information
-            </h2>
-            <div className="grid grid-cols-2 gap-x-3">
-              <div>
-                <label
-                  htmlFor="title"
-                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
-                >
-                  title
-                  <div className="w-full h-10 mt-2">
-                    <input
-                      type="text"
-                      id="title"
-                      className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
-                    />
-                  </div>
-                </label>
-              </div>
-              <div>
-                <label
-                  htmlFor="place"
-                  className="capitalize font-poppins text-slate-900 font-medium pl-2"
-                >
-                  place
-                  <div className="w-full h-10 mt-2">
-                    <input
-                      type="text"
-                      className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
-                    />
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        
       </section>
     </>
   );
