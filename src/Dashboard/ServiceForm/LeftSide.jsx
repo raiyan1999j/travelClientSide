@@ -100,13 +100,23 @@ export default function LeftSide({ purpose }) {
                 >
                   category
                   <div className="w-full h-10 mt-2">
-                    <input
+                    {/* <input
                       type="text"
                       id="category"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                       value={values.category}
                       onChange={handleChange}
-                    />
+                    /> */}
+                    <select id="category" className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans capitalize" 
+                      value={values.category}
+                      onChange={handleChange}>
+                      <option value="hill">hill</option>
+                      <option value="beach">beach</option>
+                      <option value="cities">cities</option>
+                      <option value="mountains">mountains</option>
+                      <option value="camping">camping</option>
+                      <option value="country">country</option>
+                    </select>
                   </div>
                 </label>
               </div>
@@ -147,8 +157,11 @@ export default function LeftSide({ purpose }) {
                     <div className="w-full h-10 mt-2">
                       <input
                         type="text"
+                        id="perSeat"
                         className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                         placeholder="Per seat price"
+                        value={values.perSeat}
+                        onChange={handleChange}
                       />
                     </div>
                   </label>
@@ -372,6 +385,8 @@ export default function LeftSide({ purpose }) {
                       id="morning"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                       placeholder="Total seat"
+                      value={values.morning}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -388,6 +403,8 @@ export default function LeftSide({ purpose }) {
                       id="day"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                       placeholder="Total seat"
+                      value={values.day}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -404,6 +421,8 @@ export default function LeftSide({ purpose }) {
                       id="night"
                       className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
                       placeholder="Total seat"
+                      value={values.night}
+                      onChange={handleChange}
                     />
                   </div>
                 </label>
@@ -445,8 +464,11 @@ export default function LeftSide({ purpose }) {
                     Starting Date
                     <div className="w-full h-10 mt-2">
                       <input
-                        type="text"
+                        type="date"
+                        id="startingDate"
                         className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        value={values.startingDate}
+                        onChange={handleChange}
                       />
                     </div>
                   </label>
@@ -459,8 +481,11 @@ export default function LeftSide({ purpose }) {
                     Ending Date
                     <div className="w-full h-10 mt-2">
                       <input
-                        type="text"
+                        type="date"
+                        id="endingDate"
                         className="w-full h-full bg-transparent border border-gray-300 rounded-xl text-slate-700 font-medium pl-2 font-poppins placeholder:pl-2 placeholder:font-normal placeholder:font-sans"
+                        value={values.endingDate}
+                        onChange={handleChange}
                       />
                     </div>
                   </label>

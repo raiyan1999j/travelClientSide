@@ -45,7 +45,10 @@ export default function CreateEvent(){
     return(
         <>
             <section className="w-[80%] float-right">
-            <Formik initialValues={dataCollector} onSubmit={(value)=>{finalValue(value)}}>
+            <Formik initialValues={dataCollector} onSubmit={(value,{resetForm})=>{
+                finalValue(value)
+                resetForm()
+                }}>
                 <Form>
                 <div className="w-full px-4 py-4 grid grid-cols-[65%_30%] gap-x-4">
                 <LeftSide purpose="event"/>
