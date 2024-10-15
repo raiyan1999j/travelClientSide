@@ -12,6 +12,8 @@ import CreateService from './Dashboard/CreateService/CreateService.jsx'
 import CreateEvent from './Dashboard/CreateEvent/CreateEvent.jsx'
 import CreateOffers from './Dashboard/CreateOffers/CreateOffers.jsx'
 import CreateUsual from './Dashboard/CreateUsual/CreateUsual.jsx'
+import Packages from './ClientSide/Packages/Packages.jsx'
+import Payment from './ClientSide/Payment/Payment.jsx'
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -24,8 +26,16 @@ const router = createBrowserRouter([
         element:<Home/>
       },
       {
+        path:"/packages",
+        element:<Packages/>
+      },
+      {
         path:"/signup",
         element:<LogInSignUp/>
+      },
+      {
+        path:"/payment",
+        element:<Payment/>
       }
     ]
   },

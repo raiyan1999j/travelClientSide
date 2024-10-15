@@ -11,9 +11,9 @@ export default function Navbar() {
   const { loading, userInfo,logOutUser } = useContext(InfoProvider);
   const navigate = useNavigate();
   const {isPending,isError,data} = useQuery({
-    queryKey:["userAuth",userInfo],
+    queryKey:["userAuth",userInfo?userInfo:""],
     queryFn:()=>{
-      return publicRoute(`/userAuthority?email=${userInfo.email}`)
+      return publicRoute(`/userAuthority?email=${userInfo?.email}`)
       .then(res=>res.data.author)
     }
   })
@@ -44,9 +44,13 @@ export default function Navbar() {
                         Home
                     </NavLink>
                 </li>
-                <li>stays</li>
-                <li>flight</li>
-                <li>packages</li>
+                {/* <li>stays</li>
+                <li>flight</li> */}
+                <li>
+                  <NavLink to="/packages">
+                    packages
+                  </NavLink>
+                </li>
                 <li>
                   {
                     isPending?

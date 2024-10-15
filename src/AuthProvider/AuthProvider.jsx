@@ -54,6 +54,7 @@ export default function AuthProvider({children}){
         .then((credential)=>{
             console.log(credential)
             setLoading(false)
+            createUser.mutate(credential.user.email);
         })
     }
 

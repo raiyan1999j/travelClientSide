@@ -1,6 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import Offers1 from '../../../public/offers1.png';
-import Offers2 from '../../../public/offers2.png';
 import { publicRoute } from '../../PublicRoute/PublicRoute';
 import Spin from '../../Loader/Spin';
 import OffersContainer from './OffersContainer';
